@@ -1,11 +1,12 @@
 'use strict'
 import TreeNode from '../../../src/Tree'
 
+
 describe('TreeNode', () => {
     test('Constructor', () => {
         let value = 'value'
         let treeNode = new TreeNode(value)
-        expect(treeNode.value).toBe(value)
+        expect(treeNode.getValue()).toBe(value)
     })
 
 
@@ -71,8 +72,74 @@ describe('TreeNode', () => {
         expect(child.getParent()).toBe(treeNode)
     })
 
-    test('CopySelf', () => {
-        let treeNode = new TreeNode('value')
-        let copyTreeNode
+    test('compareDeep', () => {
+        let treeNode1 = new TreeNode('value')
+        let treeNode2 = new TreeNode('value')
+
+        expect(treeNode1.compareDeep(treeNode1)).toBe(true)
+        expect(treeNode1.compareDeep(treeNode2)).toBe(false)
+
+        let childrenToAdd = [
+            new TreeNode(1),
+            new TreeNode(2),
+            new TreeNode(3),
+        ]
+        childrenToAdd.forEach(child => treeNode1.addChild(child))
+        expect(treeNode2.compareDeep(treeNode2)).toBe(true)
+        expect(treeNode2.compareDeep(treeNode1)).toBe(false)
     })
+
+    test('compareDeep', () => {
+        let treeNode1 = new TreeNode('value')
+        let treeNode2 = new TreeNode('value')
+
+        expect(treeNode1.compareDeep(treeNode1)).toBe(true)
+        expect(treeNode1.compareDeep(treeNode2)).toBe(false)
+
+        let childrenToAdd = [
+            new TreeNode(1),
+            new TreeNode(2),
+            new TreeNode(3),
+        ]
+        childrenToAdd.forEach(child => treeNode1.addChild(child))
+        expect(treeNode2.compareDeep(treeNode2)).toBe(true)
+        expect(treeNode2.compareDeep(treeNode1)).toBe(false)
+    })
+
+    test('copySelf', () => {
+        let treeNode = new TreeNode('value')
+        let child = new TreeNode('child')
+        treeNode.addChild(child)
+
+        let copy = treeNode.copySelf()
+        expect(copy.compareDeep(treeNode)).toBe(false)
+        expect(copy.getChildren()).toEqual(treeNode.getChildren())
+        expect(copy.getChild(0)).toEqual(treeNode.getChild(0))
+    })
+
+    test('moveChild', () => {
+        let treeNode1 = new TreeNode('value')
+        let treeNode2 = new TreeNode('value')
+
+        let child = new TreeNode('child')
+        treeNode1.addChild(child)
+
+        treeNode1.moveChild(treeNode2, child)
+        expect(treeNode1.getChildren()).toHaveLength(0)
+        expect(treeNode2.getChildren()).toHaveLength(1)
+        expect(child.getParent()).toEqual(treeNode2)
+    })
+
+    test('moveSelf', () => {
+        let treeNode1 = new TreeNode('treeNode1')
+        let treeNode2 = new TreeNode('treeNode2')
+
+        let child = new TreeNode('child')
+        treeNode1.addChild(child)
+
+        child.moveSelf(treeNode2)
+        expect(child.getParent().getId()).toEqual(treeNode2.getId())
+        expect(treeNode1.getChildren()).toHaveLength(0)
+    })
+
 })
