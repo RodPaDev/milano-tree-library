@@ -3,9 +3,6 @@ import { v4 as uuid } from 'uuid'
 import { isDeepStrictEqual } from 'util'
 
 class TreeNode {
-    /* TODO: 
-    Add mapping to remove children at 0(1), currently they it's O(n)
-    */
     private _id: string
     private _value: any
     private _parent: TreeNode | null
