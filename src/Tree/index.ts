@@ -1,34 +1,31 @@
 'use strict'
 import { v4 as uuid } from 'uuid'
+import { isDeepStrictEqual } from 'util'
 
 class TreeNode {
+    /* TODO: 
+    Add mapping to remove children at 0(1), currently they it's O(n)
+    */
     private _id: string
-    value: any
+    private _value: any
     private _parent: TreeNode | null
     private _children: Array<TreeNode>
 
     constructor(value: any) {
         this._id = uuid()
-        this.value = value
-        this._children = []
+        this._value = value
         this._parent = null
+        this._children = []
     }
 
-    private setParent(parent: TreeNode){
-        this._parent = parent
-    }
+    getId(): string { return this._id }
+    getParent(): TreeNode | null { return this._parent }
+    getChildren(): Array<TreeNode> { return this._children }
+    getChild(index: number): TreeNode { return this._children[index] }
+    getValue(): any { return this._value }
 
-    getId(): string {
-        return this._id
-    }
-
-    getParent(): TreeNode | null{
-        return this._parent
-    }
-
-    getChildren(): Array<TreeNode> {
-        return this._children
-    }
+    setValue(value: any): any { this._value = value }
+    private setParent(parent: TreeNode) { this._parent = parent }
 
     addChild(child: TreeNode) {
         child.setParent(this)
@@ -39,7 +36,7 @@ class TreeNode {
         let index = this._children.indexOf(child)
         if (index > -1) {
             let result = this._children[index]
-            this._children.splice(index)
+            this._children.splice(index, 1)
             return result
         }
         return null
@@ -50,21 +47,26 @@ class TreeNode {
     }
 
     copySelf(): TreeNode {
-        let treeNode = new TreeNode(this.value)
+        let treeNode = new TreeNode(this._value)
         treeNode._id = uuid()
         treeNode._children = this._children
         return treeNode
     }
 
-    compareId(treeNode: TreeNode){
-        return this._id === treeNode.getId()
+    compareDeep(treeNode: TreeNode): boolean {
+        return isDeepStrictEqual(this, treeNode)
     }
 
-    compareShallow(treeNode: TreeNode){
+    moveChild(parent: TreeNode, child: TreeNode) {
+        parent.addChild(child)
+        this.removeChild(child)
     }
 
-    //@TODO
-    //Move child, to allow child to change parent
+    moveSelf(parent: TreeNode) {
+        let self = this
+        this.removeSelf()
+        parent.addChild(self)
+    }
 }
 
 export default TreeNode
