@@ -49,6 +49,10 @@ describe('TreeNode', () => {
         let removedChild = treeNode.removeChild(child)
         expect(treeNode.getChildren()).toHaveLength(0)
         expect(removedChild).toEqual(child)
+        // Child remove without mapping
+        treeNode.addChild(child)
+        let removedChildMap = treeNode.removeChild(child, false)
+        expect(removedChildMap).toEqual(child)
     })
 
     test('RemoveSelf', () => {
@@ -140,6 +144,22 @@ describe('TreeNode', () => {
         child.moveSelf(treeNode2)
         expect(child.getParent().getId()).toEqual(treeNode2.getId())
         expect(treeNode1.getChildren()).toHaveLength(0)
+    })
+
+    test('GetChildIndex', () => {
+        let treeNode = new TreeNode('treeNode1')
+        let child0 = new TreeNode('child')
+        let child1 = new TreeNode('child')
+
+        treeNode.addChild(child0)
+        treeNode.addChild(child1)
+
+        expect(treeNode.getChildIndex(child0)).toBe(0)
+        expect(treeNode.getChildIndex(child1)).toBe(1)
+
+        expect(treeNode.getChildIndex(child0, false)).toBe(0)
+        expect(treeNode.getChildIndex(child1, false)).toBe(1)
+
     })
 
 })
