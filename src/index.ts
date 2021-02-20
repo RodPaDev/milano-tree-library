@@ -1,6 +1,8 @@
 'use strict'
+import TreeNode from './Tree'
 
-import { Milano } from './Milano'
+const Milano = {
+    TreeNode
+}
 
-export default Milano;
-Object.assign(module.exports, Milano)
+export = Milano

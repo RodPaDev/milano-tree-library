@@ -2,7 +2,7 @@
 import { v4 as uuid } from 'uuid'
 import { isDeepStrictEqual } from 'util'
 
-export class TreeNode {
+class TreeNode {
     /* TODO: 
     Add mapping to remove children at 0(1), currently they it's O(n)
     */
@@ -68,3 +68,5 @@ export class TreeNode {
         parent.addChild(self)
     }
 }
+
+export = TreeNode
