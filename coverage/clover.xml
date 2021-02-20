@@ -1,51 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1613839192381" clover="3.2.0">
-  <project timestamp="1613839192381" name="All files">
-    <metrics statements="42" coveredstatements="42" conditionals="2" coveredconditionals="2" methods="16" coveredmethods="15" elements="60" coveredelements="59" complexity="0" loc="42" ncloc="42" packages="1" files="1" classes="1"/>
-    <file name="index.ts" path="/mnt/c/Users/rodpadev/Documents/Projects/world_typer/repos/milano/src/Tree/index.ts">
-      <metrics statements="42" coveredstatements="42" conditionals="2" coveredconditionals="2" methods="16" coveredmethods="15"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="15" count="32" type="stmt"/>
-      <line num="16" count="32" type="stmt"/>
-      <line num="17" count="32" type="stmt"/>
-      <line num="18" count="32" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="22" count="4" type="stmt"/>
-      <line num="23" count="13" type="stmt"/>
-      <line num="24" count="2" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="28" count="18" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
-      <line num="31" count="18" type="stmt"/>
-      <line num="32" count="18" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
-      <line num="36" count="5" type="stmt"/>
-      <line num="37" count="5" type="cond" truecount="2" falsecount="0"/>
-      <line num="38" count="4" type="stmt"/>
-      <line num="39" count="4" type="stmt"/>
-      <line num="40" count="4" type="stmt"/>
-      <line num="42" count="1" type="stmt"/>
-      <line num="45" count="1" type="stmt"/>
-      <line num="46" count="2" type="stmt"/>
-      <line num="49" count="1" type="stmt"/>
-      <line num="50" count="1" type="stmt"/>
-      <line num="51" count="1" type="stmt"/>
-      <line num="52" count="1" type="stmt"/>
-      <line num="53" count="1" type="stmt"/>
-      <line num="56" count="1" type="stmt"/>
-      <line num="57" count="9" type="stmt"/>
-      <line num="60" count="1" type="stmt"/>
-      <line num="61" count="1" type="stmt"/>
-      <line num="62" count="1" type="stmt"/>
-      <line num="65" count="1" type="stmt"/>
-      <line num="66" count="1" type="stmt"/>
-      <line num="67" count="1" type="stmt"/>
-      <line num="68" count="1" type="stmt"/>
-      <line num="70" count="1" type="stmt"/>
-      <line num="72" count="1" type="stmt"/>
-    </file>
+<coverage generated="1613849382180" clover="3.2.0">
+  <project timestamp="1613849382180" name="All files">
+    <metrics statements="52" coveredstatements="52" conditionals="12" coveredconditionals="12" methods="17" coveredmethods="16" elements="81" coveredelements="80" complexity="0" loc="52" ncloc="52" packages="2" files="2" classes="2"/>
+    <package name="src">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/mnt/c/Users/rodpadev/Documents/Projects/world_typer/repos/milano/src/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Tree">
+      <metrics statements="49" coveredstatements="49" conditionals="12" coveredconditionals="12" methods="17" coveredmethods="16"/>
+      <file name="index.ts" path="/mnt/c/Users/rodpadev/Documents/Projects/world_typer/repos/milano/src/Tree/index.ts">
+        <metrics statements="49" coveredstatements="49" conditionals="12" coveredconditionals="12" methods="17" coveredmethods="16"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="16" count="35" type="stmt"/>
+        <line num="17" count="35" type="stmt"/>
+        <line num="18" count="35" type="stmt"/>
+        <line num="19" count="35" type="stmt"/>
+        <line num="20" count="35" type="stmt"/>
+        <line num="23" count="30" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="32" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="21" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="21" type="stmt"/>
+        <line num="43" count="21" type="stmt"/>
+        <line num="44" count="21" type="stmt"/>
+        <line num="47" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="49" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="9" type="stmt"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
