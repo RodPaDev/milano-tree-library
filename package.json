@@ -1,6 +1,6 @@
 {
-  "name": "@world_typer/milano-tree-library",
-  "version": "1.0.0",
+  "name": "milano-tree-library",
+  "version": "0.0.1",
   "description": "Milano is a tree library that focus primarly on unbalanced trees",
   "main": "dist/index.js",
   "scripts": {
