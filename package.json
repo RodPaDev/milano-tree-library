@@ -1,5 +1,5 @@
 {
-  "name": "milano",
+  "name": "milano-tree-library",
   "version": "1.0.0",
   "description": "Milano is a tree library that focus primarly on unbalanced trees",
   "main": "dist/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RodPaDev/milano.git"
+    "url": "git+https://github.com/github.com/world-typer/milano-tree-library.git"
   },
   "author": "Patrick Rodrigues Varela Nunes",
   "license": "MIT",
   "bugs": {
-    "urL": "https://github.com/RodPaDev/milano/issues"
+    "urL": "https://github.com/github.com/world-typer/milano-tree-library/issues"
   },
-  "homepage": "https://github.com/RodPaDev/milano#readme",
+  "homepage": "https://github.com/github.com/world-typer/milano-tree-library#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
