@@ -1,6 +1,6 @@
 'use strict'
 import { v4 as uuid } from 'uuid'
-import { isDeepStrictEqual } from 'util'
+import deepEqual from "deep-equal"
 
 class TreeNode {
     private _id: string
@@ -63,7 +63,7 @@ class TreeNode {
     }
 
     compareDeep(treeNode: TreeNode): boolean {
-        return isDeepStrictEqual(this, treeNode)
+        return deepEqual(this, treeNode)
     }
 
     moveChild(parent: TreeNode, child: TreeNode) {
