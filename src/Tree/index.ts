@@ -1,21 +1,20 @@
 'use strict'
 import { v4 as uuid } from 'uuid'
-import { isDeepStrictEqual } from 'util'
+import deepEqual from "deep-equal"
 
 class TreeNode {
-    /* TODO: 
-    Add mapping to remove children at 0(1), currently they it's O(n)
-    */
     private _id: string
     private _value: any
     private _parent: TreeNode | null
     private _children: Array<TreeNode>
+    private _map: Object
 
     constructor(value: any) {
         this._id = uuid()
         this._value = value
         this._parent = null
         this._children = []
+        this._map = {}
     }
 
     getId(): string { return this._id }
@@ -24,20 +23,30 @@ class TreeNode {
     getChild(index: number): TreeNode { return this._children[index] }
     getValue(): any { return this._value }
 
+    getChildIndex(child: TreeNode, mapping = true){
+        if(mapping){
+            let index = this._map[child.getId()]
+            return index || index === 0 ? index : -1
+        } else{
+            return this._children.indexOf(child)
+        }
+    }
+
     setValue(value: any): any { this._value = value }
     private setParent(parent: TreeNode) { this._parent = parent }
 
     addChild(child: TreeNode) {
+        this._map[child.getId()] = this._children.length
         child.setParent(this)
         this._children.push(child)
     }
 
-    removeChild(child: TreeNode): TreeNode | null {
-        let index = this._children.indexOf(child)
+    removeChild(child: TreeNode, useMap = true): TreeNode | null {
+        let index = this.getChildIndex(child, useMap)
         if (index > -1) {
-            let result = this._children[index]
+            let removedChild = this._children[index]
             this._children.splice(index, 1)
-            return result
+            return removedChild
         }
         return null
     }
@@ -54,7 +63,7 @@ class TreeNode {
     }
 
     compareDeep(treeNode: TreeNode): boolean {
-        return isDeepStrictEqual(this, treeNode)
+        return deepEqual(this, treeNode)
     }
 
     moveChild(parent: TreeNode, child: TreeNode) {
